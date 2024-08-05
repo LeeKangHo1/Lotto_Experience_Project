@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Rectangle;
-import java.awt.ScrollPane;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;

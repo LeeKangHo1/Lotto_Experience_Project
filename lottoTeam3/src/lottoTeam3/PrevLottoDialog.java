@@ -17,7 +17,6 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
 public class PrevLottoDialog extends JDialog implements ActionListener {
 
@@ -45,6 +44,7 @@ public class PrevLottoDialog extends JDialog implements ActionListener {
 	private JButton btnNextHwe;
 	private JButton btnNextBeon;
 	private JButton btnPrevBeon;
+	private int indexBeon;
 
 	private PrevLottoDialog(Window window, List<LottoRecord> lottoRecordList) {
 		this.lottoRecordList = lottoRecordList;
@@ -232,7 +232,7 @@ public class PrevLottoDialog extends JDialog implements ActionListener {
 			settingResults();
 			resize();
 		} else if (o.equals(comboBoxBeon)) {
-			int indexBeon = comboBoxBeon.getSelectedIndex();
+			indexBeon = comboBoxBeon.getSelectedIndex();
 			if (indexBeon < 0)
 				return;
 			lottoDatas = lottoRecordList.get(indexHwe).getLottoDatas(indexBeon);

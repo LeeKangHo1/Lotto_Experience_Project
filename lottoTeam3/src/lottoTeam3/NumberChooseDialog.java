@@ -12,10 +12,8 @@ import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
 
 public class NumberChooseDialog extends JDialog implements ActionListener {
 	// 지역변수>필드. 어디서든 사용가능(Ctrl + 1)
