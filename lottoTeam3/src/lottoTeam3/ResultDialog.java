@@ -44,6 +44,7 @@ public class ResultDialog extends JDialog {
 	private JLabel[][] lblCircles;
 	private JLabel[] lblResults;
 	private int winCount;
+	private int resultMoney;
 
 	public ResultDialog(LottoRecord lottoRecord, JFrame mainFrame) {
 		this.lottoRecord = lottoRecord;
@@ -78,7 +79,7 @@ public class ResultDialog extends JDialog {
 		// 첫번째 회차 당첨 번호를 랜덤으로 돌려서 생성해서 보여준다.
 		// 동시에 당첨 번호를 기록한다.
 		iniLottoResultNum();
-		
+
 		// 회차 라벨, 회차 선택 가능한 드랍다운 버튼 세팅
 		iniRoundLblAndDropdown();
 
@@ -115,7 +116,7 @@ public class ResultDialog extends JDialog {
 			for (int j = 0; j < ranks.length; j++) {
 				if (ranks[j] != null) {
 					if (ranks[j] < 6) {
-						String s = (j + i * 5) + 1 +"번 결과";
+						String s = (j + i * 5) + 1 + "번 결과";
 						comboBox.addItem(s);
 						winCount++;
 					}
@@ -132,10 +133,6 @@ public class ResultDialog extends JDialog {
 				listIndex = i / 5;
 			}
 		}
-
-//		for (int i = 0; i < lottoRecord.getPuchaseNum(); i++) {
-//			comboBox.addItem(String.valueOf(i + 1) + "번 로또 결과");
-//		}
 		comboBox.setPreferredSize(new Dimension(110, 30));
 		add(comboBox);
 		JButton btnPrev = new JButton("◀");
@@ -151,7 +148,7 @@ public class ResultDialog extends JDialog {
 		btnPrev.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-					comboBox.setSelectedIndex(comboBox.getSelectedIndex() - 1);
+				comboBox.setSelectedIndex(comboBox.getSelectedIndex() - 1);
 			}
 		});
 		btnNext.addActionListener(new ActionListener() {
@@ -172,13 +169,12 @@ public class ResultDialog extends JDialog {
 				} else {
 					listIndex = i / 5;
 				}
-//				listIndex = comboBox.getSelectedIndex();
 				setAndUpdate();
 				btnPrev.setEnabled(listIndex > 0);
 				btnNext.setEnabled(listIndex < comboBox.getItemCount() - 1);
 			}
 		});
-		
+
 	}
 
 	private void iniLottoResultNum() {
@@ -226,6 +222,33 @@ public class ResultDialog extends JDialog {
 		setColorCenterFont(winMoneyLabel, Color.BLACK, JLabel.CENTER, 17);
 		winMoneyLabel.setPreferredSize(new Dimension(300, 30));
 		add(winMoneyLabel);
+
+		if (winCount > 0) {
+			for (int j = 0; j < lottoRecord.getRankList().size(); j++) {
+				Integer[] ranks = lottoRecord.getRankList().get(j);
+				for (int i = 0; i < ranks.length; i++) {
+					if (ranks[i] == 1) {
+						resultMoney += 100_000_000;
+					} else if (ranks[i] == 2) {
+						resultMoney += 20_000_000;
+					} else if (ranks[i] == 3) {
+						resultMoney += 3_000_000;
+					} else if (ranks[i] == 4) {
+						resultMoney += 50_000;
+					} else if (ranks[i] == 5) {
+						resultMoney += 5_000;
+					}
+				}
+			}
+			DecimalFormat decimalFormat = new DecimalFormat("#,###");
+			String formattedNumber = decimalFormat.format(resultMoney);
+			winMoneyLabel.setText("총 당첨금액: " + formattedNumber + "원");
+			
+		} else {
+			winMoneyLabel.setText("꽝! 1개도 당첨되지 않으셨습니다.");
+			winMoneyLabel.setPreferredSize(new Dimension(500, 30));
+			comboBox.setVisible(false);
+		}
 	}
 
 	private void iniResultPanel() {
@@ -277,19 +300,23 @@ public class ResultDialog extends JDialog {
 
 		setWinMoneyLbl();
 
-//		setResultPanel();
+		setResultPanel();
 	}
 
 	private void setResultDialog() {
 		lottoDatas = lottoRecord.getLottoDatas(listIndex);
-		int count = 0;
-		for (LottoData lottoData : lottoDatas) {
-			if (lottoData == null) {
-				break;
+		if (winCount == 0) {
+			setSize(550, 180);
+		} else {
+			int count = 0;
+			for (LottoData lottoData : lottoDatas) {
+				if (lottoData == null) {
+					break;
+				}
+				count++;
 			}
-			count++;
+			setSize(550, 180 + count * 60);
 		}
-		setSize(550, 180 + count * 60);
 	}
 
 	private void setRoundLblAndDropdown() {
@@ -299,31 +326,7 @@ public class ResultDialog extends JDialog {
 
 	private void setWinMoneyLbl() {
 		calculateMoney();
-		if (winCount > 0) {
-			Integer[] ranks = lottoRecord.getRankList().get(listIndex);
-			int resultMoney = 0;
-			for (int i = 0; i < ranks.length; i++) {
-				if (ranks[i] == 1) {
-					resultMoney += 100_000_000;
-				} else if (ranks[i] == 2) {
-					resultMoney += 20_000_000;
-				} else if (ranks[i] == 3) {
-					resultMoney += 3_000_000;
-				} else if (ranks[i] == 4) {
-					resultMoney += 50_000;
-				} else if (ranks[i] == 5) {
-					resultMoney += 5_000;
-				}
-			}
-			DecimalFormat decimalFormat = new DecimalFormat("#,###");
-			String formattedNumber = decimalFormat.format(resultMoney);
-			winMoneyLabel.setText("당첨금액: " + formattedNumber + "원");
-			setResultPanel();
-		} else {
-			winMoneyLabel.setText("꽝! 1개도 당첨되지 않으셨습니다.");
-			winMoneyLabel.setPreferredSize(new Dimension(500, 30));
-			comboBox.setVisible(false);
-		}
+
 	}
 
 	private void setResultPanel() {
