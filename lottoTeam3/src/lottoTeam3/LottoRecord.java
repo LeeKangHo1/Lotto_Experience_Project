@@ -32,6 +32,25 @@ public class LottoRecord {
 		buyLotto = new ArrayList<>();
 	}
 
+	public boolean hasWin() {
+		for (int i = 0; i < rankList.size(); i++) {
+			if (isWin(i))
+				return true;
+		}
+		return false;
+	}
+
+	public boolean isWin(int beon) {
+		Integer[] rank = rankList.get(beon);
+		for (int i = 0; i < rank.length; i++) {
+			if (rank[i] == null)
+				break;
+			if (rank[i] < 6)
+				return true;
+		}
+		return false;
+	}
+
 	public void SetLottery(List<Integer> lotteryNums, int lotteryBonus) {
 		this.lotteryNums = lotteryNums;
 		this.lotteryBonus = lotteryBonus;
@@ -84,38 +103,32 @@ public class LottoRecord {
 //		System.out.println();
 	}
 
+	public Integer getLottoRank(int beon, int game) {
+		return rankList.get(beon)[game];
+	}
+
+	public long getPrize(int beon) {
+		long result = 0;
+		Integer[] ranks = rankList.get(beon);
+		for (int i = 0; i < 5; i++) {
+			if (ranks[i] == null)
+				break;
+			result += rankToPrize(ranks[i]);
+		}
+		return result;
+	}
+
 	public void addBuyLotto(LottoData[] lottoDatas) {
 		buyLotto.add(lottoDatas);
 	}
 
 	public int getProceeds() {
 		int result = 0;
-		for (LottoData[] lottoDatas : buyLotto) {
-			for (LottoData lottoData : lottoDatas) {
-				if (lottoData == null)
+		for (Integer[] ranks : rankList) {
+			for (Integer rank : ranks) {
+				if (rank == null)
 					break;
-				int[] nums = lottoData.getNums();
-				int count = 0;
-				for (int i = 0; i < nums.length; i++) {
-					if (lotteryNums.contains(nums[i]))
-						count++;
-				}
-				if (count == 6) {
-					result += 100_000_000;
-				} else if (count == 5) {
-					boolean second = false;
-					for (int i = 0; i < nums.length; i++) {
-						if (lotteryBonus == nums[i]) {
-							second = true;
-							break;
-						}
-					}
-					result += second ? 17_000_000 : 3_000_000;
-				} else if (count == 4) {
-					result += 50_000;
-				} else if (count == 3) {
-					result += 5_000;
-				}
+				result += rankToPrize(rank);
 			}
 		}
 		return result;
@@ -133,6 +146,11 @@ public class LottoRecord {
 		return result;
 	}
 
+	private long rankToPrize(int rank) {
+		return rank == 1 ? 1_952_160_000
+				: rank == 2 ? 54_226_666 : rank == 3 ? 1_427_017 : rank == 4 ? 50_000 : rank == 5 ? 5_000 : 0;
+	}
+
 	public static LottoRecord tryParse(String line) {
 		String[] splitFields = line.split("/");
 		LottoRecord lottoRecord = new LottoRecord(Integer.parseInt(splitFields[0]));
@@ -141,10 +159,10 @@ public class LottoRecord {
 		for (int i = 0; i < iNums.length; i++) {
 			iNums[i] = Integer.valueOf(strNums[i]);
 		}
-		lottoRecord.lotteryNums = Arrays.asList(iNums);
-		lottoRecord.lotteryBonus = Integer.parseInt(splitFields[2]);
-		if (splitFields.length < 4)
+		if (splitFields.length < 4) {
+			lottoRecord.SetLottery(Arrays.asList(iNums), Integer.parseInt(splitFields[2]));
 			return lottoRecord;
+		}
 
 		String[] splitBuy = splitFields[3].split("\\+");
 
@@ -166,6 +184,7 @@ public class LottoRecord {
 			}
 			lottoRecord.buyLotto.add(lottoDatas);
 		}
+		lottoRecord.SetLottery(Arrays.asList(iNums), Integer.parseInt(splitFields[2]));
 		return lottoRecord;
 	}
 

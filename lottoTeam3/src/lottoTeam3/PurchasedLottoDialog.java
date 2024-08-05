@@ -77,13 +77,13 @@ public class PurchasedLottoDialog extends JDialog {
 	}
 
 	private void iniRoundLblAndDropdown() {
-		JButton btnPrev = new JButton("◀");
-		add(btnPrev);
 		roundNow = new JLabel();
 		roundNow.setPreferredSize(new Dimension(150, 30));
 		setColorCenterFont(roundNow, Color.BLACK, JLabel.CENTER, 20);
 		add(roundNow);
 
+		JButton btnPrev = new JButton("◀");
+		add(btnPrev);
 		comboBox = new JComboBox<>();
 		for (int i = 0; i < lottoRecord.getPuchaseNum(); i++) {
 			comboBox.addItem(String.valueOf(i + 1) + "번 로또");

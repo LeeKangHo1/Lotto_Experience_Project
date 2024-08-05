@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.ScrollPane;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,19 +43,26 @@ public class ProfitDialog extends JDialog {
 		JScrollPane sp = new JScrollPane(pnlCenter);
 		sp.getVerticalScrollBar().setUnitIncrement(10);
 
-		int totalInvestment = 0;
-		int totalProceeds = 0;
+		long totalInvestment = 0;
+		long totalProceeds = 0;
+		DecimalFormat decimalFormat = new DecimalFormat("#,###");
+		String formattedInvestment;
+		String formattedProceeds;
+		String formattedProfit;
 		for (int i = 0; i < lottoRecordList.size(); i++) {
 			LottoRecord lottoRecord = lottoRecordList.get(i);
-			int investment, proceeds;
+			long investment, proceeds;
 			totalInvestment += investment = lottoRecord.getInvestment();
 			totalProceeds += proceeds = lottoRecord.getProceeds();
+			formattedInvestment = decimalFormat.format(investment);
+			formattedProceeds = decimalFormat.format(proceeds);
+			formattedProfit = decimalFormat.format(proceeds - investment);
 			JLabel lblNum = createMyLabel(i + 1 + "회", new Rectangle(0, i * 20, 60, 20), 15, pnlCenter);
-			JLabel lblInvestment = createMyLabel(investment + "원", new Rectangle(60, i * 20, 130, 20), 15, pnlCenter);
+			JLabel lblInvestment = createMyLabel(formattedInvestment + "원", new Rectangle(60, i * 20, 130, 20), 15, pnlCenter);
 			lblInvestment.setHorizontalAlignment(JLabel.RIGHT);
-			JLabel lblProceeds = createMyLabel(proceeds + "원", new Rectangle(190, i * 20, 130, 20), 15, pnlCenter);
+			JLabel lblProceeds = createMyLabel(formattedProceeds + "원", new Rectangle(190, i * 20, 130, 20), 15, pnlCenter);
 			lblProceeds.setHorizontalAlignment(JLabel.RIGHT);
-			JLabel lblProfit = createMyLabel(proceeds - investment + "원", new Rectangle(320, i * 20, 130, 20), 15, pnlCenter);
+			JLabel lblProfit = createMyLabel(formattedProfit + "원", new Rectangle(320, i * 20, 130, 20), 15, pnlCenter);
 			lblProfit.setHorizontalAlignment(JLabel.RIGHT);
 
 		}
@@ -63,13 +71,15 @@ public class ProfitDialog extends JDialog {
 		pnlSouth.setBackground(Color.WHITE);
 		pnlSouth.setPreferredSize(new Dimension(390, 20));
 
+		formattedInvestment = decimalFormat.format(totalInvestment);
+		formattedProceeds = decimalFormat.format(totalProceeds);
+		formattedProfit = decimalFormat.format(totalProceeds - totalInvestment);
 		JLabel lblTotal = createMyLabel("총", new Rectangle(0, 0, 60, 20), 15, pnlSouth);
-		JLabel lblTotalInvestment = createMyLabel(totalInvestment + "원", new Rectangle(60, 0, 130, 20), 15, pnlSouth);
+		JLabel lblTotalInvestment = createMyLabel(formattedInvestment + "원", new Rectangle(60, 0, 130, 20), 15, pnlSouth);
 		lblTotalInvestment.setHorizontalAlignment(JLabel.RIGHT);
-		JLabel lblTotalProceeds = createMyLabel(totalProceeds + "원", new Rectangle(190, 0, 130, 20), 15, pnlSouth);
+		JLabel lblTotalProceeds = createMyLabel(formattedProceeds + "원", new Rectangle(190, 0, 130, 20), 15, pnlSouth);
 		lblTotalProceeds.setHorizontalAlignment(JLabel.RIGHT);
-		JLabel lblTotalProfit = createMyLabel(totalProceeds - totalInvestment + "원", new Rectangle(320, 0, 130, 20), 15,
-				pnlSouth);
+		JLabel lblTotalProfit = createMyLabel(formattedProfit + "원", new Rectangle(320, 0, 130, 20), 15, pnlSouth);
 		lblTotalProfit.setHorizontalAlignment(JLabel.RIGHT);
 
 		add(pnlNorth, "North");
