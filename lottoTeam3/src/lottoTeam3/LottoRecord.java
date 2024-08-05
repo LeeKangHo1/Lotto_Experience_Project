@@ -15,10 +15,6 @@ public class LottoRecord {
 		return lottoRound;
 	}
 
-	public List<Integer[]> getRankList() {
-		return rankList;
-	}
-
 	public List<Integer> getLotteryNums() {
 		return lotteryNums;
 	}
