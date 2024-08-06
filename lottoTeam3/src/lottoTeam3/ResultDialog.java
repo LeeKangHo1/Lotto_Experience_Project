@@ -101,8 +101,8 @@ public class ResultDialog extends JDialog {
 
 		setModal(true);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setLocationRelativeTo(mainFrame);
 		setResizable(false);
+		setLocation(mainFrame.getX() + mainFrame.getWidth(), mainFrame.getY());
 	}
 
 	private void iniRoundLblAndDropdown() {

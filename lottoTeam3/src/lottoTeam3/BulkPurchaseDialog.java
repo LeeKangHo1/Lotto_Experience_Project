@@ -82,6 +82,8 @@ public class BulkPurchaseDialog extends JDialog {
 		pack();
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(frame);
+		setLocationRelativeTo(frame);
+//		setLocation(0, 0);
 	}
 
 	public static int showDialog(JFrame frame) {

@@ -32,7 +32,6 @@ public class MainFrame extends JFrame implements ActionListener {
 	private JButton btnMoneyCheck;
 	private JButton btnStats;
 	private JButton btnManyBuy;
-	private JFrame frame;
 
 	public MainFrame() {
 		super("가상 로또 시뮬레이션");
@@ -131,7 +130,7 @@ public class MainFrame extends JFrame implements ActionListener {
 			frameClose();
 		} else if (o.equals(btnManyBuy)) { // 대량구매
 			// 구매하고자 하는 금액만큼 모두 자동으로 구입
-			int lottoCount = BulkPurchaseDialog.showDialog(frame);
+			int lottoCount = BulkPurchaseDialog.showDialog(this);
 			if (lottoCount > 0) {
 				for (int i = 0; i < lottoCount; i++) {
 					curLottoRecord.addBuyLotto(PurchaseDialog.createAuto());

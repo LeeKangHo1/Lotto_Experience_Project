@@ -108,6 +108,8 @@ public class LottoRecord {
 	}
 
 	public long getPrize(int beon) {
+		if (beon < 0)
+			return 0;
 		long result = 0;
 		Integer[] ranks = rankList.get(beon);
 		for (int i = 0; i < 5; i++) {
