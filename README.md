@@ -1,6 +1,7 @@
  <h2 align="center">
 	 Lotto Experience Project
  </h2>
+ 
 ---
 - Experience the Lotto!
 - 2024.07.29 ~ 2024.08.06
@@ -13,8 +14,12 @@
 ---
 - Program 주요 기능
 - 메인화면
-	![](로또%20메인%20화면.jpg)
+
+	![로또 메인 화면](https://github.com/user-attachments/assets/1be09ba5-9943-4452-b8f4-544550a5bbb7)
+
 - 구매화면
-	![](로또%20구매%20화면.jpg)
+
+	![로또 구매 화면](https://github.com/user-attachments/assets/6af513ba-6964-4694-bdf5-57f162cd1912)
+
 ---
 - 프로젝트 초기 설계 단계(를 뒤에)
