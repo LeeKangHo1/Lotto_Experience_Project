@@ -1,3 +1,6 @@
+<p align="center">
+	<img src="https://github.com/user-attachments/assets/aacc592a-dc3e-450c-a494-4b03ca384c6d" alt="lotto logo">
+</p>
  <h2 align="center">
 	 Lotto Experience Project
  </h2>
