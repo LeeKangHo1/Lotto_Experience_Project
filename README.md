@@ -8,7 +8,7 @@
 ---
 
 - Experience the Lotto!
-- 2024.07.29 ~ 2024.08.06
+- 2024.07.29 ~ 08.06
 - Collaborators
 	- [이학석](https://github.com/HSLee1013)
 	- [구예은](https://github.com/goho11)
