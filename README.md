@@ -1,2 +1,5 @@
-Lotto Simualtino Program
-작성 시작
+ <h2 align="center">
+	 Lotto Experience Project
+ </h2>
+---
+
