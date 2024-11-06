@@ -80,3 +80,9 @@
 - ### 통계
 
 ![로또 통계](https://github.com/user-attachments/assets/e0659dc3-5803-4125-9c6a-79e0a1c20eee)
+
+---
+## Authors
+- 이강호
+- 깃허브 닉네임: LeeKangHo1
+- [깃허브 프로필 링크](https://github.com/LeeKangHo1)
