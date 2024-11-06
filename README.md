@@ -16,7 +16,7 @@
 <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" alt="Java" style="zoom: 1.5;" /> <img src="https://img.shields.io/badge/Java_Swing-5382A1?style=for-the-badge&logo=java&logoColor=white" alt="Java Swing" style="zoom: 1.5;" /> <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white" alt="Eclipse" style="zoom: 1.5;" /> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" style="zoom: 1.5;" />
 
 ---
-### 1. 프로젝트 설계([이동](#프로젝트-초기-설계-단계))
+### 1. 프로젝트 설계([이동](#프로젝트-설계))
 - 초기 화면 디자인
 - 
 
@@ -55,7 +55,7 @@
 
 		![로또 통계](https://github.com/user-attachments/assets/e0659dc3-5803-4125-9c6a-79e0a1c20eee)
 ---
-- #### 프로젝트 초기 설계 단계
+- #### 프로젝트 설계
 	- 초기 화면 디자인
 		
 	![초기 화면 디자인](https://github.com/user-attachments/assets/06d72225-02b6-4f76-afad-225d6f6e4714)
