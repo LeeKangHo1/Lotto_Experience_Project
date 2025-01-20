@@ -59,64 +59,14 @@
 ## 3. 그 외 기능
 - ### 초기 화면 디자인
 	![초기 화면 디자인](https://github.com/user-attachments/assets/06d72225-02b6-4f76-afad-225d6f6e4714)
-- 
-
-### 2. Program 주요 기능([이동](#2-Program-주요-기능))
-- 메인 화면
-- 구매
-- 숫자 선택
-- 로또 모의 추첨
-- 현재 구매한 로또 번호 확인
-- 이전 회차 기록
-- 로또 데이터 저장 방식
-- 손익결산
-- 통계
----
-## 1. 프로젝트 설계 단계
-
-
-
-
-- ### Git 협업 과정
-
-
-
-## 2. Program 주요 기능
 - ### 메인 화면
-	
-![로또 메인 화면](https://github.com/user-attachments/assets/5b7a8852-2776-4621-91ab-ea77c4be217c)
-
-- ### 구매
-
-
-
+	![로또 메인 화면](https://github.com/user-attachments/assets/5b7a8852-2776-4621-91ab-ea77c4be217c)
 - ### 숫자 선택
-
-![숫자 선택 화면](https://github.com/user-attachments/assets/a65df7a2-51c6-4467-9014-352a5b0e8986)
-
-- ### 로또 모의 추첨
-
-
-
-- ### 현재 구매한 로또 번호 확인
-
-
-
-- ### 이전 회차 기록
-
-
-
-- ### 로또 데이터 저장 방식(텍스트)
-
-
-
+	![숫자 선택 화면](https://github.com/user-attachments/assets/a65df7a2-51c6-4467-9014-352a5b0e8986)
 - ### 손익결산
-
-![로또 손익결산](https://github.com/user-attachments/assets/352c9bf4-c02a-4ba1-a289-ccd0ad0d54d9)
-
+	![로또 손익결산](https://github.com/user-attachments/assets/352c9bf4-c02a-4ba1-a289-ccd0ad0d54d9)
 - ### 통계
-
-![로또 통계](https://github.com/user-attachments/assets/e0659dc3-5803-4125-9c6a-79e0a1c20eee)
+	![로또 통계](https://github.com/user-attachments/assets/e0659dc3-5803-4125-9c6a-79e0a1c20eee)
 
 ---
 ## Authors
