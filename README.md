@@ -24,7 +24,8 @@
 - ### 1) Git 협업
 	![git 브랜치 전략](https://github.com/user-attachments/assets/f9953b41-c750-4c66-8450-1f9de843838e)
 	 - Git 사용 경험이 많지 않아서 조원들 모두가 이해할 수 있는 간단한 브랜치 전략을 수립
-	![[충돌정리 ppt 버전.jpg]]
+	![충돌정리 ppt 버전](https://github.com/user-attachments/assets/44209db2-8ea0-4017-9cb5-49d542080f05)
+
 	 - merge 시 문제 발생할 경우 정리해서 master에 push
 - ### 2) 가상 추첨 기능 구현
 	![로또 결과창](https://github.com/user-attachments/assets/e9175d81-d701-471a-89bb-83ba2c3f033c)
