@@ -24,8 +24,8 @@
 - ### 1) Git 협업
 	![git 브랜치 전략](https://github.com/user-attachments/assets/f9953b41-c750-4c66-8450-1f9de843838e)
 	 - Git 사용 경험이 많지 않아서 조원들 모두가 이해할 수 있는 간단한 브랜치 전략을 수립
+	
 	![충돌정리 ppt 버전](https://github.com/user-attachments/assets/44209db2-8ea0-4017-9cb5-49d542080f05)
-
 	 - merge 시 문제 발생할 경우 정리해서 master에 push
 - ### 2) 가상 추첨 기능 구현
 	![로또 결과창](https://github.com/user-attachments/assets/e9175d81-d701-471a-89bb-83ba2c3f033c)
@@ -40,6 +40,7 @@
 - ### 3) 추첨 화면을 재활용, 추가 기능 구현
 	![구매한 로또 번호 확인](https://github.com/user-attachments/assets/0a7e2381-03ce-479d-9c73-07e264d48921)
 	- 여러 장 구입했을 경우 사용자가 이전에 작성한 번호 확인 가능
+	
 	![이전 회차 정보 확인](https://github.com/user-attachments/assets/d3a28294-176d-4fad-ba50-f0a6470ec338)
 	- 이전 회차 당첨 결과를 확인 가능
 - ### 4) 데이터 저장
