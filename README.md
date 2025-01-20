@@ -20,6 +20,15 @@
 <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openJDK&logoColor=white" alt="Java" style="zoom: 1.5;" /> <img src="https://img.shields.io/badge/Java_Swing-5382A1?style=for-the-badge&logo=java&logoColor=white" alt="Java Swing" style="zoom: 1.5;" /> <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white" alt="Eclipse" style="zoom: 1.5;" /> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" style="zoom: 1.5;" />
 
 ---
+## 목차
+
+### 1. 담당 업무
+- Git 협업
+- 가상 추첨 기능 구현
+- 추첨 화면을 재활용, 추가 기능 구현
+- 데이터 저장
+### 2. 프로젝트 개인 감상
+### 3. 그 외 기능
 ## 1. 담당 업무
 - ### 1) Git 협업
 	![git 브랜치 전략](https://github.com/user-attachments/assets/f9953b41-c750-4c66-8450-1f9de843838e)
